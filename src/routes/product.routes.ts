@@ -8,9 +8,9 @@ import {
   updateProduct,
 } from "../controllers/product.controllers";
 
-const route = Router();
+const routes = Router();
 // upload.single("file"),
-route
+routes
   .get("/", getAllProducts)
   .get("/:id", getSIngleProduct)
   .post("/", createProduct)

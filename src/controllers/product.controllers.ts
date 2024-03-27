@@ -126,7 +126,7 @@ export const deleteProduct = async (
       });
     }
     res.json({
-      Message: `Product with the id of ${id} has been Deleted`,
+      Message: `Product with the id of ${id} has been Deleted successfully`,
     });
   } catch (error) {
     next(error);
