@@ -17,4 +17,4 @@ routes
   .put("/:id", updateProduct)
   .delete("/:id", deleteProduct);
 
-export default route;
+export default routes;
