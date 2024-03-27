@@ -9,7 +9,7 @@ dotenv.config();
 const app: Express = express();
 const port = process.env.PORT || 3000;
 
-app.use(errorHandler);
+app.use(express.json());
 
 app.use("/products", ProductRoute);
 
@@ -18,6 +18,8 @@ app.all("*", (req: Request, res: Response) => {
     Error: "No route found",
   });
 });
+
+app.use(errorHandler);
 
 app.listen(port, () => {
   console.log(`[server]: Server is running at http://localhost:${port}`);
