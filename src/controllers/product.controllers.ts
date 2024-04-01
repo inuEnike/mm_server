@@ -53,11 +53,13 @@ export const createProduct = async (
         Error: "The fields are required",
       });
     }
+    const file = req.file?.path;
     const products = new Products({
       name,
       price,
       description,
       size,
+      image: file,
       category,
       quantity,
       discountPrice,

@@ -1,14 +1,15 @@
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
+dotenv.config();
 import dbConnector from "./utils/db";
 import errorHandler from "./middleware/error.middleware";
 import ProductRoute from "./routes/product.routes";
-
-dotenv.config();
+import cors from "cors";
 
 const app: Express = express();
 const port = process.env.PORT || 3000;
 
+app.use(cors());
 app.use(express.json());
 
 app.use("/products", ProductRoute);

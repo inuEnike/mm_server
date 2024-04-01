@@ -9,11 +9,10 @@ import {
 } from "../controllers/product.controllers";
 
 const routes = Router();
-// upload.single("file"),
 routes
   .get("/", getAllProducts)
   .get("/:id", getSIngleProduct)
-  .post("/", createProduct)
+  .post("/", upload.single("file"), createProduct)
   .put("/:id", updateProduct)
   .delete("/:id", deleteProduct);
 
